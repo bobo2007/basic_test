@@ -134,3 +134,19 @@ class Hash {
         return this; // Returns the hash instance.
     }
 }
+
+// gets the data for map
+function getMapData({__data__}, key){
+    const data = __data__;
+    //return isKeyable(key) ? data
+}
+
+// Checks if `value` is suitable for use as unique object key.
+function isKeyable(value){
+    const type = typeof value;
+    return (type == "string" || type == "number" || type == "symbol" || type == "boolean") ? (value !== '__proto__') : (value === null);
+}
+
+class MapCache {
+    
+}
