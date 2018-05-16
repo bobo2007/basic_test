@@ -4,16 +4,18 @@ function type(value){
 
 function clone(value, refFrom, refTo, deep){
     var copy = function(copiedValue){
-        var len = refFrom.length;
-        var idx = 0;
-        while(idx < len){
-            // if(value === refFrom[idx]){
-            //     return refTo[idx];
-            // }
-            idx += 1;
-        }
-        refFrom[idx + 1] = value;
-        refTo[idx + 1] = copiedValue;
+        // var len = refFrom.length;
+        // var idx = 0;
+        // console.log('idx', idx);
+        // while(idx < len){
+        //     if(value === refFrom[idx]){
+        //         return refTo[idx];
+        //     }
+        //     idx += 1;
+        // }
+        // refFrom[idx + 1] = value;
+        // refTo[idx + 1] = copiedValue;
+        // console.log('refFrom',refFrom, 'refTo',refTo);
         for(var key in value){
             copiedValue[key] = deep ? clone(value[key], refFrom, refTo, deep) : value[key];
         }
@@ -34,4 +36,4 @@ var obj = {
     d : {e: {f : 4}}
 };
 
-console.log(clone(obj, [], [], true));
+console.log(clone(obj, [], [], true)== obj);
