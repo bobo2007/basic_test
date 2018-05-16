@@ -25,7 +25,7 @@ function clone(value, refFrom, refTo, deep){
     switch(type(value)){
         case 'Object':  return copy({});
         case 'Array': return copy([]);
-        case 'Date': return new Date(value.valueOf());
+        case 'Date': return new Date(value.valueOf()); 
         default : return value;
     }
 }
